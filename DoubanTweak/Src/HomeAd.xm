@@ -1,6 +1,7 @@
 // 首页广告
 
 #import <UIKit/UIKit.h>
+#import "NJCommonDefine.h"
 
 // 豆瓣首页帖子广告
 %hook DOUFrodoAdInfo

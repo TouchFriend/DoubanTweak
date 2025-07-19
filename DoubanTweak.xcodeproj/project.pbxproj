@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF59ED522E2A4485006A8988 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59ED512E2A4485006A8988 /* Security.framework */; };
+		BF785D3C2E28D65A00ED90BB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */; };
 		BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A952E288426007189A5 /* UIKit.framework */; };
 		BFAC3A982E288426007189A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A972E288426007189A5 /* Foundation.framework */; };
 		BFAC3A9A2E288426007189A5 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A992E288426007189A5 /* CydiaSubstrate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF59ED512E2A4485006A8988 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		BFAC3A922E288426007189A5 /* DoubanTweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = DoubanTweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC3A952E288426007189A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFAC3A972E288426007189A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -26,6 +30,8 @@
 				Package/Library/MobileSubstrate/DynamicLibraries/DoubanTweak.dylib,
 				Src/HomeAd.xm,
 				Src/LaunchAd.xm,
+				Src/Network/NJNetwork.xm,
+				Src/Network/NJNetworkProxy.xm,
 			);
 			target = BFAC3A912E288426007189A5 /* DoubanTweak */;
 		};
@@ -40,6 +46,8 @@
 			explicitFileTypes = {
 				Src/HomeAd.xm = sourcecode.cpp.objcpp;
 				Src/LaunchAd.xm = sourcecode.cpp.objcpp;
+				Src/Network/NJNetwork.xm = sourcecode.cpp.objcpp;
+				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
 			};
 			path = DoubanTweak;
 			sourceTree = "<group>";
@@ -52,7 +60,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */,
+				BF59ED522E2A4485006A8988 /* Security.framework in Frameworks */,
 				BFAC3A982E288426007189A5 /* Foundation.framework in Frameworks */,
+				BF785D3C2E28D65A00ED90BB /* CFNetwork.framework in Frameworks */,
 				BFAC3A9A2E288426007189A5 /* CydiaSubstrate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +90,8 @@
 		BFAC3A942E288426007189A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF59ED512E2A4485006A8988 /* Security.framework */,
+				BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */,
 				BFAC3A952E288426007189A5 /* UIKit.framework */,
 				BFAC3A972E288426007189A5 /* Foundation.framework */,
 				BFAC3A992E288426007189A5 /* CydiaSubstrate.framework */,

@@ -1,6 +1,7 @@
 // 开屏广告
 
 #import <UIKit/UIKit.h>
+#import "NJCommonDefine.h"
 
 // 开屏涂鸦页面
 %hook FRDBaseDoodleViewController
