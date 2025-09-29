@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF59ED522E2A4485006A8988 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59ED512E2A4485006A8988 /* Security.framework */; };
+		BF66DFB02E8A811000E3AF1F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF66DFAF2E8A811000E3AF1F /* WebKit.framework */; };
 		BF785D3C2E28D65A00ED90BB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */; };
 		BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A952E288426007189A5 /* UIKit.framework */; };
 		BFAC3A982E288426007189A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A972E288426007189A5 /* Foundation.framework */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		BF59ED512E2A4485006A8988 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		BF66DFAF2E8A811000E3AF1F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/iOSSupport/System/Library/PrivateFrameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		BFAC3A922E288426007189A5 /* DoubanTweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = DoubanTweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAC3A952E288426007189A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -33,6 +35,7 @@
 				Src/Home/HomeAd.xm,
 				Src/Launch/LaunchAd.xm,
 				Src/Network/NJNetworkProxy.xm,
+				Src/RichMedia/RichMediaAd.xm,
 			);
 			target = BFAC3A912E288426007189A5 /* DoubanTweak */;
 		};
@@ -48,6 +51,7 @@
 				Src/Home/HomeAd.xm = sourcecode.cpp.objcpp;
 				Src/Launch/LaunchAd.xm = sourcecode.cpp.objcpp;
 				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
+				Src/RichMedia/RichMediaAd.xm = sourcecode.cpp.objcpp;
 			};
 			path = DoubanTweak;
 			sourceTree = "<group>";
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF66DFB02E8A811000E3AF1F /* WebKit.framework in Frameworks */,
 				BFEC89DE2E8A51090054368A /* CoreGraphics.framework in Frameworks */,
 				BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */,
 				BF59ED522E2A4485006A8988 /* Security.framework in Frameworks */,
@@ -91,6 +96,7 @@
 		BFAC3A942E288426007189A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF66DFAF2E8A811000E3AF1F /* WebKit.framework */,
 				BFEC89DD2E8A51090054368A /* CoreGraphics.framework */,
 				BF59ED512E2A4485006A8988 /* Security.framework */,
 				BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */,
