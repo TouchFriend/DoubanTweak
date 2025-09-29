@@ -12,6 +12,7 @@
 		BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A952E288426007189A5 /* UIKit.framework */; };
 		BFAC3A982E288426007189A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A972E288426007189A5 /* Foundation.framework */; };
 		BFAC3A9A2E288426007189A5 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC3A992E288426007189A5 /* CydiaSubstrate.framework */; };
+		BFEC89DE2E8A51090054368A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEC89DD2E8A51090054368A /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BFAC3A952E288426007189A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFAC3A972E288426007189A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFAC3A992E288426007189A5 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
+		BFEC89DD2E8A51090054368A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -30,7 +32,6 @@
 				Package/Library/MobileSubstrate/DynamicLibraries/DoubanTweak.dylib,
 				Src/HomeAd.xm,
 				Src/LaunchAd.xm,
-				Src/Network/NJNetwork.xm,
 				Src/Network/NJNetworkProxy.xm,
 			);
 			target = BFAC3A912E288426007189A5 /* DoubanTweak */;
@@ -46,7 +47,6 @@
 			explicitFileTypes = {
 				Src/HomeAd.xm = sourcecode.cpp.objcpp;
 				Src/LaunchAd.xm = sourcecode.cpp.objcpp;
-				Src/Network/NJNetwork.xm = sourcecode.cpp.objcpp;
 				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
 			};
 			path = DoubanTweak;
@@ -59,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEC89DE2E8A51090054368A /* CoreGraphics.framework in Frameworks */,
 				BFAC3A962E288426007189A5 /* UIKit.framework in Frameworks */,
 				BF59ED522E2A4485006A8988 /* Security.framework in Frameworks */,
 				BFAC3A982E288426007189A5 /* Foundation.framework in Frameworks */,
@@ -90,6 +91,7 @@
 		BFAC3A942E288426007189A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFEC89DD2E8A51090054368A /* CoreGraphics.framework */,
 				BF59ED512E2A4485006A8988 /* Security.framework */,
 				BF785D3B2E28D65A00ED90BB /* CFNetwork.framework */,
 				BFAC3A952E288426007189A5 /* UIKit.framework */,
@@ -229,10 +231,15 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubanTweak/DoubanTweak-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NJ_TWEAK=1",
+				);
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DoubanTweak/Package/Library/MobileSubstrate/DynamicLibraries",
+					"$(PROJECT_DIR)/DoubanTweak/Package/Library/Caches/NJDouban",
 				);
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
@@ -260,10 +267,15 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubanTweak/DoubanTweak-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NJ_TWEAK=1",
+				);
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DoubanTweak/Package/Library/MobileSubstrate/DynamicLibraries",
+					"$(PROJECT_DIR)/DoubanTweak/Package/Library/Caches/NJDouban",
 				);
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;

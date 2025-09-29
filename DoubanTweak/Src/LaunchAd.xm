@@ -36,3 +36,4 @@
 %ctor {
     %init(FRDBaseDoodleViewController = objc_getClass("Frodo.FRDBaseDoodleViewController"));
 }
+

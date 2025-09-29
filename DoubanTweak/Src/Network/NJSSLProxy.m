@@ -74,14 +74,21 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
     static NSData *localPublicKeyData = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *certPath = NJAssetPath(charles-ssl-proxying-certificate.cer);
+        NSString *certPath = NJ_ASSET_PATH(@"charles-ssl-proxying-certificate.cer");
         NSData *certData = [NSData dataWithContentsOfFile:certPath];
+        if (!certData) {
+            return;
+        }
         SecCertificateRef localCert = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
         SecKeyRef key = SecCertificateCopyKey(localCert);
         localPublicKeyData = (__bridge_transfer NSData *)SecKeyCopyExternalRepresentation(key, NULL);
         CFRelease(key);
         CFRelease(localCert);
     });
+    if (!localPublicKeyData) {
+        if (origBlock) origBlock();
+        return;
+    }
     
     // 遍历服务器证书链
     SecTrustRef serverTrust = challenge.protectionSpace.serverTrust;
