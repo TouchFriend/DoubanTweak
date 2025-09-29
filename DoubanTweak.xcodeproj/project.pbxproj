@@ -30,8 +30,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Package/Library/MobileSubstrate/DynamicLibraries/DoubanTweak.dylib,
-				Src/HomeAd.xm,
-				Src/LaunchAd.xm,
+				Src/Home/HomeAd.xm,
+				Src/Launch/LaunchAd.xm,
 				Src/Network/NJNetworkProxy.xm,
 			);
 			target = BFAC3A912E288426007189A5 /* DoubanTweak */;
@@ -45,8 +45,8 @@
 				BFAC3AB52E2884C9007189A5 /* Exceptions for "DoubanTweak" folder in "DoubanTweak" target */,
 			);
 			explicitFileTypes = {
-				Src/HomeAd.xm = sourcecode.cpp.objcpp;
-				Src/LaunchAd.xm = sourcecode.cpp.objcpp;
+				Src/Home/HomeAd.xm = sourcecode.cpp.objcpp;
+				Src/Launch/LaunchAd.xm = sourcecode.cpp.objcpp;
 				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
 			};
 			path = DoubanTweak;
