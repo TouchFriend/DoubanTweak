@@ -34,6 +34,7 @@
 				Package/Library/MobileSubstrate/DynamicLibraries/DoubanTweak.dylib,
 				Src/Home/HomeAd.xm,
 				Src/Launch/LaunchAd.xm,
+				Src/Network/NJNetwork.xm,
 				Src/Network/NJNetworkProxy.xm,
 				Src/RichMedia/RichMediaAd.xm,
 			);
@@ -50,6 +51,7 @@
 			explicitFileTypes = {
 				Src/Home/HomeAd.xm = sourcecode.cpp.objcpp;
 				Src/Launch/LaunchAd.xm = sourcecode.cpp.objcpp;
+				Src/Network/NJNetwork.xm = sourcecode.cpp.objcpp;
 				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
 				Src/RichMedia/RichMediaAd.xm = sourcecode.cpp.objcpp;
 			};
