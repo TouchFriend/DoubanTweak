@@ -10,7 +10,7 @@
 
 @interface NJApiDataItem ()
 
-/// <#Desription#>
+/// 接收的数据
 @property (nonatomic, strong) NSMutableData *receiveData;
 
 
