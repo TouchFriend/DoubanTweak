@@ -52,9 +52,9 @@ static void (*_logos_orig$_ungrouped$URLSessionAdapter$URLSession$dataTask$didRe
 
 static void _logos_method$_ungrouped$URLSessionAdapter$URLSession$dataTask$didReceiveData$(_LOGOS_SELF_TYPE_NORMAL id _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, NSURLSession * session, NSURLSessionDataTask * task, NSData * data) {
     
-    if ([task.nj_interceptData isEqualToNumber:NJ_INTERCEPT_DATA_FLAG]) {
+    if ([task.nj_interceptDataFlag isEqualToNumber:NJ_INTERCEPT_DATA_FLAG]) {
         
-        task.nj_interceptData = nil;
+        task.nj_interceptDataFlag = nil;
         _logos_orig$_ungrouped$URLSessionAdapter$URLSession$dataTask$didReceiveData$(self, _cmd, session, task, data);
         return;
     }

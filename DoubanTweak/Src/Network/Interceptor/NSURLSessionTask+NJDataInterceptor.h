@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURLSessionTask (NJDataInterceptor)
 
-/// 是否是拦截的数据
-@property (nonatomic, strong, nullable) NSNumber *nj_interceptData;
+/// 拦截数据标志
+@property (nonatomic, strong, nullable) NSNumber *nj_interceptDataFlag;
 
 @end
 

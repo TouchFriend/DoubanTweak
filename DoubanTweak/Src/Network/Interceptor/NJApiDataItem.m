@@ -38,10 +38,18 @@
 
 #pragma mark - Public Methods
 
+/// 要拦截的url
 + (NSString *)url {
     return @"";
 }
 
+
+/// 拦截 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data 方法
+/// - Parameters:
+///   - session: 会话
+///   - task: 请求任务
+///   - data: 数据
+///   - origBlock: 调用原方法的闭包
 - (void)URLSession:(NSURLSession *)session
           dataTask:(NSURLSessionDataTask *)task
     didReceiveData:(NSData *)data
@@ -53,6 +61,14 @@
     }
 }
 
+
+/// 拦截 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error 方法
+/// - Parameters:
+///   - session: 会话
+///   - task: 请求任务
+///   - error: 错误
+///   - origBlock: 调用原方法的闭包
+///   - didReceiveDataBlock: 调用 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data 方法的闭包
 - (void)URLSession:(NSURLSession *)session
               task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error
@@ -75,7 +91,7 @@ didReceiveDataBlock:(void(^)(NSURLSession *,
     // 传递数据
     if (didReceiveDataBlock) {
         // 添加拦截标志
-        task.nj_interceptData = NJ_INTERCEPT_DATA_FLAG;
+        task.nj_interceptDataFlag = NJ_INTERCEPT_DATA_FLAG;
         didReceiveDataBlock(session,
                             (NSURLSessionDataTask *)task,
                             dataHandled);
@@ -84,6 +100,13 @@ didReceiveDataBlock:(void(^)(NSURLSession *,
     if (origBlock) origBlock(session, task, error);
 }
 
+
+/// 处理拦截的数据
+/// - Parameters:
+///   - data: 要处理的数据
+///   - session: 会话
+///   - task: 请求任务
+///   @return 处理后的数据
 - (NSData *)handleWithData:(NSData *)data
                    session:(NSURLSession *)session
                       task:(NSURLSessionTask *)task {

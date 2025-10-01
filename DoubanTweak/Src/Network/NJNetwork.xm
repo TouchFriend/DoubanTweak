@@ -24,9 +24,9 @@
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)task didReceiveData:(NSData *)data {
     // 是否是拦截的数据
-    if ([task.nj_interceptData isEqualToNumber:NJ_INTERCEPT_DATA_FLAG]) {
+    if ([task.nj_interceptDataFlag isEqualToNumber:NJ_INTERCEPT_DATA_FLAG]) {
         // 清除拦截标志
-        task.nj_interceptData = nil;
+        task.nj_interceptDataFlag = nil;
         %orig;
         return;
     }

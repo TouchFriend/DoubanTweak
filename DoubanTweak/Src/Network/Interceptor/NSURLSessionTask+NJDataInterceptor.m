@@ -10,12 +10,12 @@
 
 @implementation NSURLSessionTask (NJDataInterceptor)
 
-- (void)setNj_interceptData:(NSNumber *)nj_interceptData {
-    objc_setAssociatedObject(self, @selector(nj_interceptData), nj_interceptData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setNj_interceptDataFlag:(NSNumber *)nj_interceptData {
+    objc_setAssociatedObject(self, @selector(nj_interceptDataFlag), nj_interceptData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSNumber *)nj_interceptData {
-    NSNumber *interceptData = objc_getAssociatedObject(self, @selector(nj_interceptData));
+- (NSNumber *)nj_interceptDataFlag {
+    NSNumber *interceptData = objc_getAssociatedObject(self, @selector(nj_interceptDataFlag));
     return interceptData;
 }
 
