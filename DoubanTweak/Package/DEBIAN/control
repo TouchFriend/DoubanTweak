@@ -1,17 +1,19 @@
-Package: com.moon.DoubanTweak
+Package: com.touchWorld.doubanTweak
 Name: DoubanTweak
-Version: 0.1-1
-Description: 
-Section: System
+Version: 1.0.0
+Description: 去除豆瓣广告插件
+Section: Tweaks
 Depends: firmware (>= 5.0), mobilesubstrate
-Conflicts: 
-Replaces: 
+Conflicts:
+Replaces:
 Priority: optional
 Architecture: iphoneos-arm
-Author: touchWorld
-dev: 
-Homepage: 
-Depiction: 
-Maintainer: 
-Icon: 
+Author: TouchWorld
+dev:
+Homepage: https://github.com/TouchFriend/DoubanTweak
+Depiction:
+Maintainer: TouchWorld
+Icon: https://touchfriend.github.io/depictions/com.touchWorld.doubanTweak/icon.png
+
+
 
