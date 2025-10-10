@@ -35,7 +35,6 @@
 				Src/Home/HomeAd.xm,
 				Src/Launch/LaunchAd.xm,
 				Src/Network/NJNetwork.xm,
-				Src/Network/NJNetworkProxy.xm,
 				Src/RichMedia/RichMediaAd.xm,
 			);
 			target = BFAC3A912E288426007189A5 /* DoubanTweak */;
@@ -52,7 +51,6 @@
 				Src/Home/HomeAd.xm = sourcecode.cpp.objcpp;
 				Src/Launch/LaunchAd.xm = sourcecode.cpp.objcpp;
 				Src/Network/NJNetwork.xm = sourcecode.cpp.objcpp;
-				Src/Network/NJNetworkProxy.xm = sourcecode.cpp.objcpp;
 				Src/RichMedia/RichMediaAd.xm = sourcecode.cpp.objcpp;
 			};
 			path = DoubanTweak;
