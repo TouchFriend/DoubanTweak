@@ -52,6 +52,7 @@ static DOUFrodoAdInfo* _logos_method$_ungrouped$DOUFrodoAdInfo$initWithData$(_LO
 
 
 
+
 @interface DOUBaseTabBarController : UITabBarController
 
 
@@ -123,4 +124,4 @@ static NSArray * _logos_method$_ungrouped$DOUBaseTabBarController$nj_filterViewC
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$DOUFrodoAdInfo = objc_getClass("DOUFrodoAdInfo"); { MSHookMessageEx(_logos_class$_ungrouped$DOUFrodoAdInfo, @selector(init), (IMP)&_logos_method$_ungrouped$DOUFrodoAdInfo$init, (IMP*)&_logos_orig$_ungrouped$DOUFrodoAdInfo$init);}{ MSHookMessageEx(_logos_class$_ungrouped$DOUFrodoAdInfo, @selector(initWithDictionary:), (IMP)&_logos_method$_ungrouped$DOUFrodoAdInfo$initWithDictionary$, (IMP*)&_logos_orig$_ungrouped$DOUFrodoAdInfo$initWithDictionary$);}{ MSHookMessageEx(_logos_class$_ungrouped$DOUFrodoAdInfo, @selector(initWithString:), (IMP)&_logos_method$_ungrouped$DOUFrodoAdInfo$initWithString$, (IMP*)&_logos_orig$_ungrouped$DOUFrodoAdInfo$initWithString$);}{ MSHookMessageEx(_logos_class$_ungrouped$DOUFrodoAdInfo, @selector(initWithData:), (IMP)&_logos_method$_ungrouped$DOUFrodoAdInfo$initWithData$, (IMP*)&_logos_orig$_ungrouped$DOUFrodoAdInfo$initWithData$);}Class _logos_class$_ungrouped$DOUBaseTabBarController = objc_getClass("DOUBaseTabBarController"); { MSHookMessageEx(_logos_class$_ungrouped$DOUBaseTabBarController, @selector(setViewControllers:animated:), (IMP)&_logos_method$_ungrouped$DOUBaseTabBarController$setViewControllers$animated$, (IMP*)&_logos_orig$_ungrouped$DOUBaseTabBarController$setViewControllers$animated$);}{ char _typeEncoding[1024]; unsigned int i = 0; memcpy(_typeEncoding + i, @encode(NSArray *), strlen(@encode(NSArray *))); i += strlen(@encode(NSArray *)); _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; memcpy(_typeEncoding + i, @encode(NSArray *), strlen(@encode(NSArray *))); i += strlen(@encode(NSArray *)); _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$DOUBaseTabBarController, @selector(nj_filterViewControllers:), (IMP)&_logos_method$_ungrouped$DOUBaseTabBarController$nj_filterViewControllers$, _typeEncoding); }} }
-#line 96 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/Home/HomeAd.xm"
+#line 97 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/Home/HomeAd.xm"
