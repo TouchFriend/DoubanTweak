@@ -3,7 +3,7 @@ Name: DoubanTweak
 Version: 1.1.0
 Description: 去除豆瓣广告插件
 Section: Tweaks
-Depends: firmware (>= 5.0), mobilesubstrate
+Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts:
 Replaces:
 Priority: optional
