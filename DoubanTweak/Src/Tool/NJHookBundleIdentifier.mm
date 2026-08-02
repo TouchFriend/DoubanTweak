@@ -1,4 +1,4 @@
-#line 1 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanMApp/DoubanMAppDylib/Logos/Tool/NJHookBundleIdentifier.xm"
+#line 1 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/Tool/NJHookBundleIdentifier.xm"
 
 
 #import <Foundation/Foundation.h>
@@ -74,35 +74,35 @@ static BOOL ShouldHookBundle(NSBundle *bundle)
 __asm__(".linker_option \"-framework\", \"CydiaSubstrate\"");
 
 @class NSBundle; 
-static NSString * (*_logos_orig$_ungrouped$NSBundle$bundleIdentifier)(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static NSString * _logos_method$_ungrouped$NSBundle$bundleIdentifier(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static id (*_logos_orig$_ungrouped$NSBundle$objectForInfoDictionaryKey$)(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL, NSString *); static id _logos_method$_ungrouped$NSBundle$objectForInfoDictionaryKey$(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL, NSString *); static NSDictionary * (*_logos_orig$_ungrouped$NSBundle$infoDictionary)(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static NSDictionary * _logos_method$_ungrouped$NSBundle$infoDictionary(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static NSDictionary * (*_logos_orig$_ungrouped$NSBundle$localizedInfoDictionary)(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static NSDictionary * _logos_method$_ungrouped$NSBundle$localizedInfoDictionary(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); 
+static NSDictionary * (*_logos_orig$_ungrouped$NSBundle$infoDictionary)(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); static NSDictionary * _logos_method$_ungrouped$NSBundle$infoDictionary(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST, SEL); 
 
-#line 52 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanMApp/DoubanMAppDylib/Logos/Tool/NJHookBundleIdentifier.xm"
-
-
-static NSString * _logos_method$_ungrouped$NSBundle$bundleIdentifier(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
-    NSString *orig = _logos_orig$_ungrouped$NSBundle$bundleIdentifier(self, _cmd);
-
-    if (ShouldHookBundle(self)) {
+#line 52 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/Tool/NJHookBundleIdentifier.xm"
 
 
 
 
-        return kFakeBundleID;
-    }
-
-    return orig;
-}
-
-static id _logos_method$_ungrouped$NSBundle$objectForInfoDictionaryKey$(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, NSString * key) {
-    if (ShouldHookBundle(self) &&
-        [key isEqualToString:@"CFBundleIdentifier"]) {
 
 
-        return kFakeBundleID;
-    }
 
-    return _logos_orig$_ungrouped$NSBundle$objectForInfoDictionaryKey$(self, _cmd, key);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 static NSDictionary * _logos_method$_ungrouped$NSBundle$infoDictionary(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
     NSDictionary *origDict = _logos_orig$_ungrouped$NSBundle$infoDictionary(self, _cmd);
@@ -122,23 +122,23 @@ static NSDictionary * _logos_method$_ungrouped$NSBundle$infoDictionary(_LOGOS_SE
     return dict ?: origDict;
 }
 
-static NSDictionary * _logos_method$_ungrouped$NSBundle$localizedInfoDictionary(_LOGOS_SELF_TYPE_NORMAL NSBundle* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
-    NSDictionary *origDict = _logos_orig$_ungrouped$NSBundle$localizedInfoDictionary(self, _cmd);
-
-    if (!ShouldHookBundle(self)) {
-        return origDict;
-    }
-
-    NSMutableDictionary *dict = [origDict mutableCopy];
-
-    if (dict) {
-        dict[@"CFBundleIdentifier"] = kFakeBundleID;
-    }
 
 
 
-    return dict ?: origDict;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -165,5 +165,5 @@ static __attribute__((constructor)) void _logosLocalCtor_5ef05993(int __unused a
     }
 }
 static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$NSBundle = objc_getClass("NSBundle"); { MSHookMessageEx(_logos_class$_ungrouped$NSBundle, @selector(bundleIdentifier), (IMP)&_logos_method$_ungrouped$NSBundle$bundleIdentifier, (IMP*)&_logos_orig$_ungrouped$NSBundle$bundleIdentifier);}{ MSHookMessageEx(_logos_class$_ungrouped$NSBundle, @selector(objectForInfoDictionaryKey:), (IMP)&_logos_method$_ungrouped$NSBundle$objectForInfoDictionaryKey$, (IMP*)&_logos_orig$_ungrouped$NSBundle$objectForInfoDictionaryKey$);}{ MSHookMessageEx(_logos_class$_ungrouped$NSBundle, @selector(infoDictionary), (IMP)&_logos_method$_ungrouped$NSBundle$infoDictionary, (IMP*)&_logos_orig$_ungrouped$NSBundle$infoDictionary);}{ MSHookMessageEx(_logos_class$_ungrouped$NSBundle, @selector(localizedInfoDictionary), (IMP)&_logos_method$_ungrouped$NSBundle$localizedInfoDictionary, (IMP*)&_logos_orig$_ungrouped$NSBundle$localizedInfoDictionary);}} }
-#line 139 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanMApp/DoubanMAppDylib/Logos/Tool/NJHookBundleIdentifier.xm"
+{Class _logos_class$_ungrouped$NSBundle = objc_getClass("NSBundle"); { MSHookMessageEx(_logos_class$_ungrouped$NSBundle, @selector(infoDictionary), (IMP)&_logos_method$_ungrouped$NSBundle$infoDictionary, (IMP*)&_logos_orig$_ungrouped$NSBundle$infoDictionary);}} }
+#line 139 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/Tool/NJHookBundleIdentifier.xm"

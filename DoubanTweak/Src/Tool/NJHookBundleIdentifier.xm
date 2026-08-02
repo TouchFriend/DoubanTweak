@@ -50,7 +50,7 @@ static BOOL ShouldHookBundle(NSBundle *bundle)
 #pragma mark - NSBundle
 
 %hook NSBundle
-
+/*
 - (NSString *)bundleIdentifier {
     NSString *orig = %orig;
 
@@ -75,7 +75,7 @@ static BOOL ShouldHookBundle(NSBundle *bundle)
 
     return %orig;
 }
-
+ */
 - (NSDictionary *)infoDictionary {
     NSDictionary *origDict = %orig;
 
@@ -93,7 +93,7 @@ static BOOL ShouldHookBundle(NSBundle *bundle)
 
     return dict ?: origDict;
 }
-
+/*
 - (NSDictionary *)localizedInfoDictionary {
     NSDictionary *origDict = %orig;
 
@@ -111,7 +111,7 @@ static BOOL ShouldHookBundle(NSBundle *bundle)
 
     return dict ?: origDict;
 }
-
+ */
 %end
 
 #pragma mark - Constructor
