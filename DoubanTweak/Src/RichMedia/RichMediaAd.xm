@@ -62,6 +62,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "NJCommonDefine.h"
 
 @interface FRDRXRSubjectModuleViewController : NSObject
 
@@ -105,5 +106,17 @@
 //- (_Bool)webView:(id)view shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(long long)type {
 //    return %orig;
 //}
+
+%end
+
+%hook DOUSharedUDID
+
++ (id)sharedUDIDForDoubanApplications {
+    id ret = %orig;
+    if (!ret) {
+        return @"88d16d3de0547f3d764eed3d33c4e75069e750e4";
+    }
+    return ret;
+}
 
 %end

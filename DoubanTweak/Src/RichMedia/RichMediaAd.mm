@@ -63,6 +63,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "NJCommonDefine.h"
 
 @interface FRDRXRSubjectModuleViewController : NSObject
 
@@ -93,10 +94,10 @@
 
 __asm__(".linker_option \"-framework\", \"CydiaSubstrate\"");
 
-@class FRDRXRSubjectModuleViewController; 
-static void (*_logos_orig$_ungrouped$FRDRXRSubjectModuleViewController$initWebView)(_LOGOS_SELF_TYPE_NORMAL FRDRXRSubjectModuleViewController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebView(_LOGOS_SELF_TYPE_NORMAL FRDRXRSubjectModuleViewController* _LOGOS_SELF_CONST, SEL); 
+@class DOUSharedUDID; @class FRDRXRSubjectModuleViewController; 
+static void (*_logos_orig$_ungrouped$FRDRXRSubjectModuleViewController$initWebView)(_LOGOS_SELF_TYPE_NORMAL FRDRXRSubjectModuleViewController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebView(_LOGOS_SELF_TYPE_NORMAL FRDRXRSubjectModuleViewController* _LOGOS_SELF_CONST, SEL); static id (*_logos_meta_orig$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications)(_LOGOS_SELF_TYPE_NORMAL Class _LOGOS_SELF_CONST, SEL); static id _logos_meta_method$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications(_LOGOS_SELF_TYPE_NORMAL Class _LOGOS_SELF_CONST, SEL); 
 
-#line 72 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/RichMedia/RichMediaAd.xm"
+#line 73 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/RichMedia/RichMediaAd.xm"
 
 
 static void _logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebView(_LOGOS_SELF_TYPE_NORMAL FRDRXRSubjectModuleViewController* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
@@ -135,6 +136,18 @@ static void _logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebVi
 
 
 
+
+
+
+static id _logos_meta_method$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications(_LOGOS_SELF_TYPE_NORMAL Class _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
+    id ret = _logos_meta_orig$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications(self, _cmd);
+    if (!ret) {
+        return @"88d16d3de0547f3d764eed3d33c4e75069e750e4";
+    }
+    return ret;
+}
+
+
 static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$FRDRXRSubjectModuleViewController = objc_getClass("FRDRXRSubjectModuleViewController"); { MSHookMessageEx(_logos_class$_ungrouped$FRDRXRSubjectModuleViewController, @selector(initWebView), (IMP)&_logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebView, (IMP*)&_logos_orig$_ungrouped$FRDRXRSubjectModuleViewController$initWebView);}} }
-#line 110 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/RichMedia/RichMediaAd.xm"
+{Class _logos_class$_ungrouped$FRDRXRSubjectModuleViewController = objc_getClass("FRDRXRSubjectModuleViewController"); { MSHookMessageEx(_logos_class$_ungrouped$FRDRXRSubjectModuleViewController, @selector(initWebView), (IMP)&_logos_method$_ungrouped$FRDRXRSubjectModuleViewController$initWebView, (IMP*)&_logos_orig$_ungrouped$FRDRXRSubjectModuleViewController$initWebView);}Class _logos_class$_ungrouped$DOUSharedUDID = objc_getClass("DOUSharedUDID"); Class _logos_metaclass$_ungrouped$DOUSharedUDID = object_getClass(_logos_class$_ungrouped$DOUSharedUDID); { MSHookMessageEx(_logos_metaclass$_ungrouped$DOUSharedUDID, @selector(sharedUDIDForDoubanApplications), (IMP)&_logos_meta_method$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications, (IMP*)&_logos_meta_orig$_ungrouped$DOUSharedUDID$sharedUDIDForDoubanApplications);}} }
+#line 123 "/Users/touchworld/Documents/iOSDisassembler/hook/douban/DoubanTweak/DoubanTweak/Src/RichMedia/RichMediaAd.xm"
